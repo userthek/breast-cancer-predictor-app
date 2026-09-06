@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+:root {
+	--background: #f6f4fb;
+	--text: #3d4358;
+	--muted-text: #505a73;
+	--pastel-blue: #c9d9ef;
+	--pastel-blue-border: #aec7e6;
+	--sidebar-blue: #dce5f5;
+	--accent-blue: #7182ad;
+	--accent-pink: #d58fa7;
+	--pastel-green: #d8efdf;
+	--green-text: #2f6843;
+	--pastel-red: #f2d6dc;
+	--red-text: #8c4052;
+}
+
+.stApp {
+	background: var(--background);
+	color: var(--text);
+	overflow-x: hidden;
+}
+
+[data-testid="stAppViewContainer"] > .main {
+	padding: 2.5rem clamp(1.25rem, 4vw, 4rem) 2rem;
+}
+
+h1,
+h2,
+h3,
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3 {
+	color: var(--text);
+	font-family: 'DM Serif Display', Georgia, serif !important;
+	font-weight: 400;
+	letter-spacing: 0.01em;
+}
+
+
+h1,
+[data-testid="stMarkdownContainer"] h1 {
+	font-size: clamp(2.4rem, 5vw, 4.2rem);
+	line-height: 1;
+	margin-bottom: 1rem;
+}
+
+.eyebrow,
+.section-label {
+	color: var(--accent-blue);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.eyebrow {
+	margin-bottom: 0.45rem;
+}
+
+.dataset-link {
+	color: var(--accent-blue);
+	display: inline-block;
+	font-size: 0.78rem;
+	margin-top: 0.15rem;
+	text-decoration: none;
+}
+
+.dataset-link:hover {
+	color: var(--green-text);
+	text-decoration: underline;
+}
+
+.section-label {
+	margin: 1.25rem 0 0.4rem;
+}
+
+[data-testid="stSidebar"] {
+	background: var(--sidebar-blue);
+	overflow-x: hidden;
+}
+
+[data-testid="stSidebar"] > div:first-child {
+	box-sizing: border-box;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+[data-testid="stSidebar"] * {
+	color: var(--muted-text);
+}
+
+[data-testid="stSidebar"] [role="slider"] {
+	background: var(--accent-pink);
+	border-color: var(--accent-pink);
+}
+
+.prediction-box {
+	background: var(--pastel-blue);
+	border: 1px solid var(--pastel-blue-border);
+	border-radius: 18px 8px 18px 8px;
+	box-sizing: border-box;
+	box-shadow: 0 8px 18px rgba(86, 106, 145, 0.16);
+	padding: 1.1rem 1rem;
+}
+
+.prediction-box h3 {
+	color: var(--text);
+	font-size: 1.35rem;
+	margin: 0 0 1rem;
+}
+
+.prediction-box p {
+	color: var(--muted-text);
+	font-size: 0.9rem;
+	line-height: 1.5;
+}
+
+.prediction-box .probability-word {
+	font-style: italic;
+	font-weight: 700;
+}
+
+.diagnosis {
+	border-radius: 5px;
+	display: inline-block;
+	font-family: 'DM Serif Display', Georgia, serif;
+	font-size: 1.1rem;
+	font-style: italic;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	margin-bottom: 0.6rem;
+	padding: 0.4rem 0.75rem;
+}
+
+.diagnosis.benign {
+	background: var(--pastel-green);
+	color: var(--green-text);
+}
+
+.diagnosis.malignant {
+	background: var(--pastel-red);
+	color: var(--red-text);
+}
+
+.prediction-box code {
+	background: var(--pastel-green);
+	border-radius: 4px;
+	color: #3f7650;
+	display: inline-block;
+	font-size: 0.78rem;
+	margin-top: 0.2rem;
+	padding: 0.25rem 0.4rem;
+}
+
+.prediction-box p:nth-of-type(2) code {
+	background: var(--pastel-red);
+	color: var(--red-text);
+}
+
+.prediction-box .prediction-note {
+	border-top: 1px solid rgba(80, 90, 115, 0.2);
+	font-size: 0.75rem;
+	margin-bottom: 0;
+	padding-top: 0.75rem;
+}
+
+@media (max-width: 900px) {
+	[data-testid="stAppViewContainer"] > .main {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	[data-testid="stSidebar"] h2 {
+		font-size: 1.25rem;
+	}
+}
